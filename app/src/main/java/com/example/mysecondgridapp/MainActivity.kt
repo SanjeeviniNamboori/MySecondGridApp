@@ -36,7 +36,14 @@ class MainActivity : AppCompatActivity() {
             "Android 2.3 Gingerbread is the seventh version of Android, a codename of the Android mobile operating system developed by Google and released in December 2010, for versions that are no longer supported. The Gingerbread release introduced support for near field communication (NFC)—used in mobile payment solutions—and Session Initiation Protocol (SIP)—used in VoIP internet telephones.",
             " Android KitKat is the codename for the eleventh version of the Android mobile operating system, representing release version 4.4. Unveiled on September 3, 2013, KitKat focused primarily on optimizing the operating system for improved performance on entry-level devices with limited resources.",
             "Android Jelly Bean is the codename given to the tenth version of the Android mobile operating system developed by Google, spanning three major point releases (versions 4.1 through 4.3. 1). Among the devices that run Android 4.3 are the Asus Nexus 7 (2013)")
-
+        val referenceUrls = arrayOf("https://en.wikipedia.org/wiki/Android_Cupcake",
+           "https://en.wikipedia.org/wiki/Android_Lollipop",
+            "https://en.wikipedia.org/wiki/Android_Donut",
+            "https://en.wikipedia.org/wiki/Android_Froyo",
+            "https://en.wikipedia.org/wiki/Android_Gingerbread",
+            "https://en.wikipedia.org/wiki/Android_kitkat",
+            "https://en.wikipedia.org/wiki/Android_Jelly_Bean"
+        )
         val customAdapter =  CustomAdapter(this@MainActivity, arrayListImage, name)
         gridView.adapter = customAdapter
 
@@ -58,6 +65,7 @@ class MainActivity : AppCompatActivity() {
             "name" ,name[position].capitalize())
             intent.putExtra("description", description[position])
             intent.putExtra("image", arrayListImage[position])
+            intent.putExtra("wikiUrl", referenceUrls[position])
         startActivity(intent)
         }
     }
